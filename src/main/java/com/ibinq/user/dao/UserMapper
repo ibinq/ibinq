@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace命名空间特殊作用： 如果使用mapper动态代理方法，这里就需要配置mapper接口地址-->
+
+<mapper namespace="user">
+
+    <!-- 添加用户
+    parameterType：如果parameterType指定 是pojo，在#{}中指定 pojo的属性名获取该pojo的属性值
+     -->
+    <insert id="addUser" parameterType="com.ibinq.user.bean.User">
+        insert into user(id,username,password,age,phone,email,address) values(#{name},#{username},#{password},#{age},#{phone},#{email},#{address})
+    </insert>
+
+
+</mapper>
